@@ -9,5 +9,3 @@ dependencies:
       - dataset==1.1.2
       - tweepy==3.8.0
 
-prefix: C:\Users\User\Anaconda3\envs\paro
-
