@@ -6,10 +6,11 @@ from sqlite3 import OperationalError
 from pprint import pprint
 
 logger = logging.getLogger(__name__)
-# logger.setLevel(logging.INFO)
+logger.setLevel(logging.INFO)
 
 
 class StreamListener(tweepy.StreamListener):
+    logger = logging.getLogger(__name__)
 
     def __init__(self,
                  api,
@@ -18,8 +19,8 @@ class StreamListener(tweepy.StreamListener):
         self.api = api
 
     def on_status(self, status):
-        logger.info(status.text)
-        # pprint(vars(status))
+        logger.debug(status.text)
+        # pprint(status._json)
 
         description = status.user.description
         loc = status.user.location
